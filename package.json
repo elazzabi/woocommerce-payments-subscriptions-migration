@@ -12,7 +12,7 @@
 		"format:css": "wp-scripts format-style",
 		"format:js": "wp-scripts format-js",
 		"clean": "del-cli build",
-		"dist": "npm run clean && npm run build && rm -f woocommerce-payments-subscriptions-migration.zip && zip -r woocommerce-payments-subscriptions-migration.zip -@ < .distpackage"
+		"dist": "rm -f .distpackage && ./generate_distpackage.sh > .distpackage && npm run clean && npm run build && rm -f woocommerce-payments-subscriptions-migration.zip && zip -r woocommerce-payments-subscriptions-migration.zip -@ < .distpackage"
 	},
 	"author": "Marcel Schmitz",
 	"license": "ISC",
